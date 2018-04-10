@@ -43,7 +43,8 @@ cpu-map 1 1
 {{- end}}
   ca-base /etc/ssl
   crt-base /etc/ssl
-  stats socket /var/lib/haproxy/run/haproxy.sock mode 600 level admin
+  stats socket /var/lib/haproxy/run/haproxy.sock mode 600 level admin process 1
+  stats socket /var/lib/haproxy/run/haproxy1.sock mode 600 level admin process 2
   stats timeout 2m
 
   # Increase the default request size to be comparable to modern cloud load balancers (ALB: 64kb), affects
